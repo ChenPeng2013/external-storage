@@ -1,12 +1,14 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: nfs
-  annotations:
-    volume.beta.kubernetes.io/storage-class: "example-nfs"
+  name: nfs2
+  namespace: llroad
+  #annotations:
+  #  volume.beta.kubernetes.io/storage-class: "example-nfs"
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 1Mi
+  storageClassName: "pingcap-nfs"
